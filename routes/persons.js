@@ -6,6 +6,7 @@ let Person = require('../models/person'); //inyecta dependencia del modelo perso
 const { route } = require('express/lib/application');
 
 //se agrega ruta persons => metodo GET
+//aqui nos renderizara la vista en vez del objeto json
 router.get('/persons', function (req, res, next) {
     Person.find(function (err, persons) {
         if(err) return next(err);
